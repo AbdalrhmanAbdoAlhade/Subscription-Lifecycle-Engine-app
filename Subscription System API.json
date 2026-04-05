@@ -1,0 +1,366 @@
+{
+  "v": 11,
+  "name": "Subscription System API",
+  "folders": [
+    {
+      "v": 11,
+      "name": "Auth",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Register",
+          "method": "POST",
+          "endpoint": "<<base_url>>/register",
+          "params": [],
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n    \"name\": \"user\",\n    \"email\": \"user@example.com\",\n    \"password\": \"password123\",\n    \"password_confirmation\": \"password123\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Login",
+          "method": "POST",
+          "endpoint": "<<base_url>>/login",
+          "params": [],
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "inherit",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\"\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Get Profile (Me)",
+          "method": "GET",
+          "endpoint": "<<base_url>>/me",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Logout",
+          "method": "POST",
+          "endpoint": "<<base_url>>/logout",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Plans",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "List Plans",
+          "method": "GET",
+          "endpoint": "<<base_url>>/plans",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Create Plan",
+          "method": "POST",
+          "endpoint": "<<base_url>>/plans",
+          "params": [],
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json",
+              "active": true,
+              "description": ""
+            }
+          ],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "3|wriYefj3Cii4dZXG9cnM1VXTN1EFCxnrv41P1xHze7041f2e",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n    \"name\": \"Premium Plan\",\n    \"description\": \"Full access to all features\",\n    \"trial_days\": 7,\n    \"is_active\": true,\n    \"prices\": [\n        {\n            \"billing_cycle\": \"monthly\",\n            \"currency\": \"USD\",\n            \"price\": 19.99\n        },\n        {\n            \"billing_cycle\": \"yearly\",\n            \"currency\": \"USD\",\n            \"price\": 199.99\n        }\n    ]\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Get Plan Details",
+          "method": "GET",
+          "endpoint": "<<base_url>>/plans/1",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Subscriptions",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "My Subscriptions",
+          "method": "GET",
+          "endpoint": "<<base_url>>/subscriptions",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Create Subscription",
+          "method": "POST",
+          "endpoint": "<<base_url>>/subscriptions",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "2|NxqIkM4ZCWpzHlYpa7PWrhr9pjMTpoWqwSRF4zuT90b27b21",
+            "authActive": true
+          },
+          "body": {
+            "contentType": "application/json",
+            "body": "{\n    \"plan_price_id\": 1\n}"
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Cancel Subscription",
+          "method": "POST",
+          "endpoint": "<<base_url>>/subscriptions/1/cancel",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    },
+    {
+      "v": 11,
+      "name": "Payments",
+      "folders": [],
+      "requests": [
+        {
+          "v": "17",
+          "name": "Pay Subscription",
+          "method": "POST",
+          "endpoint": "<<base_url>>/subscriptions/1/pay",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        },
+        {
+          "v": "17",
+          "name": "Simulate Payment Failure",
+          "method": "POST",
+          "endpoint": "<<base_url>>/subscriptions/1/fail",
+          "params": [],
+          "headers": [],
+          "preRequestScript": "",
+          "testScript": "",
+          "auth": {
+            "authType": "bearer",
+            "token": "<<auth_token>>",
+            "authActive": true
+          },
+          "body": {
+            "contentType": null,
+            "body": null
+          },
+          "requestVariables": [],
+          "responses": {},
+          "description": null
+        }
+      ],
+      "auth": {
+        "authType": "inherit",
+        "authActive": true
+      },
+      "headers": [],
+      "variables": [],
+      "description": null
+    }
+  ],
+  "requests": [],
+  "auth": {
+    "authType": "inherit",
+    "authActive": true
+  },
+  "headers": [],
+  "variables": [
+    {
+      "key": "base_url",
+      "initialValue": "http://localhost:8000/api",
+      "currentValue": "",
+      "secret": false
+    },
+    {
+      "key": "auth_token",
+      "initialValue": "your_token_here",
+      "currentValue": "",
+      "secret": false
+    }
+  ],
+  "description": "API collection for Auth, Plans, Subscriptions, and Payments based on Laravel Sanctum."
+}
